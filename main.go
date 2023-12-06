@@ -1,7 +1,17 @@
-package adventofcode
+package main
 
-import "log"
+import (
+	"adventofcode/dayone"
+	_ "embed"
+	"log"
+	"strings"
+)
+
+//go:embed dayone/input.txt
+var dayOneInput string
 
 func main() {
-	log.Fatalln("Well hello there!")
+	sum := dayone.Run(strings.NewReader(dayOneInput))
+
+	log.Println(sum)
 }
